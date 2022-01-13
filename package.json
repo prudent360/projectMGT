@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "name": "express_app",
+  "version": "1.0.0",
+  "description": "My first express app",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "express_App"
+  },
+  "author": "Ifiokobong Akpan",
+  "license": "ISC"
+}
