@@ -1,0 +1,48 @@
+<%- include ('partials/header') %>
+
+<!-- <h1>Welcome to the post page</h1> -->
+<div class="ui container">
+  <form class="ui form" action="/addproject" method="post">
+    <b>PROJECT TITLE:</b>
+    <input type="text" placeholder="Enter Post Title" name="title" />
+    <b>CLIENT:</b> <input type="text" placeholder="Your Name" name="client" /> INITIAL
+    <b>COST:</b>
+    <input type="number" placeholder="Initial Project Cost" name="init_cost" />
+    <b>FINAL COST:</b>
+    <input type="number" placeholder="Final Project Cost" name="final_cost" />
+    <button type="submit" class="positive ui button right floated">
+      SUBMIT
+    </button>
+  </form>
+
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Project Title</th>
+        <th>Client</th>
+        <th>Initial Cost(N)</th>
+        <th>Final Cost(N)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <% proj.forEach((project) => { %>
+    <tbody>
+      <tr>
+        <td data-label="Title" id="project"><%= project.title %></td>
+        <td data-label="Client" id="project"><%= project.client %></td>
+        <td data-label="Client" id="project"><%= project.init_cost %></td>
+        <td data-label="Client" id="project"><%= project.final_cost %></td>
+        <td>
+          <button class="negative ui button" id="project">
+            <i class="trash icon"></i>Delete
+          </button>
+          <button class="ui blue button"><i class="edit icon"></i>Edit</button>
+        </td>
+      </tr>
+    </tbody>
+    <% }) %>
+  </table>
+</div>
+
+<%- include ('partials/footer') %>
