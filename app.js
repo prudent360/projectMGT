@@ -62,6 +62,10 @@ app.get("/project/:id", (req, res) => {
   res.send("THIS IS THE SHOW PAGE");
 });
 
+app.get("/addproject", (req, res) => {
+  res.render("add-project");
+});
+
 app.post("/addproject", (req, res) => {
   var title = req.body.title;
   var client = req.body.client;
