@@ -58,7 +58,7 @@ app.get("/projects", (req, res) => {
   // res.render("projects", { projects: projects });
 });
 
-app.get("/projects/:id", (req, res) => {
+app.get("/project/:id", (req, res) => {
   res.send("THIS IS THE SHOW PAGE");
 });
 
