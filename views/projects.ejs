@@ -22,7 +22,7 @@
         <td data-label="Client" id="project"><%= project.init_cost.toLocaleString() %></td>
         <td data-label="Client" id="project"><%= project.final_cost.toLocaleString() %></td>
         <td>
-          <button class="ui grey button">View</button>
+          <a href="/project/<%= project._id %>"> <button class="ui grey button">View</button></a>
           <button class="negative ui button" id="project">
             <i class="trash icon"></i>Delete
           </button>

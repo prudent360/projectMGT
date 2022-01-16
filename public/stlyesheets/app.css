@@ -1,0 +1,37 @@
+body {
+    color: black;
+    background: azure;
+}
+
+.post {
+    background: white;
+    border: 2px #000000 solid;
+    padding: 5px;
+    border-radius: 20px;
+    width: 700px;
+    margin: 10px auto;
+}
+
+.newpost {
+    border-radius: 0%;
+}
+
+.button-spacing {
+    padding-top: 20px;
+}
+
+.homepage {
+    /* background: red; */
+    background-image: url("https://images.unsplash.com/photo-1573166755916-ef92a6806ab3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80");
+}
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+.home-text {
+    color: white;
+    text-transform: uppercase;
+}

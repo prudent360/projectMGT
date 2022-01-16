@@ -1,0 +1,15 @@
+<%- include ('partials/header') %>
+
+<div class="ui main text container segment">
+ <h1><%= single.title %></h1><hr>
+ <p><%= single.client %></p><hr>
+ <p><%= single.init_cost.toLocaleString() %></p><hr>
+ <p><%= single.final_cost.toLocaleString() %></p><hr>
+ <% if ((single.final_cost - single.init_cost) < 0){ %>
+        <p>Cost Overrun</p><hr>
+ <% } else { %>
+        <p>Profit</p><hr>
+ <% } %>
+</div>
+
+<%- include ('partials/footer') %>
