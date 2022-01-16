@@ -15,3 +15,7 @@ body {
 .newpost {
     border-radius: 0%;
 }
+
+.button-spacing {
+    padding-top: 20px;
+}

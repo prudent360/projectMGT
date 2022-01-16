@@ -1,0 +1,21 @@
+<%- include ('partials/header') %>
+
+<div class="ui container">
+  <form class="ui form" action="/addproject" method="post">
+    <b>Project Title:</b>
+    <input type="text" placeholder="Enter Project Title" name="title" />
+    <b>Client Name:</b>
+    <input type="text" placeholder="Enter Client's Name" name="client" />
+    <b>Initial Cost:</b>
+    <input type="number" placeholder="Initial Project Cost" name="init_cost" />
+    <b>Final Cost:</b>
+    <input type="number" placeholder="Final Project Cost" name="final_cost" />
+    <div class="button-spacing">
+      <button type="submit" class="positive ui button fluid ui button">
+        SUBMIT
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include ('partials/footer') %>
