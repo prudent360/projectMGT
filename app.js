@@ -86,6 +86,11 @@ app.get("/project/:id/edit", (req, res) => {
   });
 });
 
+// UPDATE ROUTE
+app.put("/project/:id", (req, res) => {
+  
+})
+
 app.post("/addproject", (req, res) => {
   var title = req.body.title;
   var client = req.body.client;
