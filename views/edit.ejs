@@ -1,1 +1,26 @@
-<h1>Edit Page</h1>
+<%- include ('partials/header') %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= project.title %></div>
+  <form class="ui form" action="/addproject" method="post">
+    <b>Project Title:</b>
+    <input type="text" placeholder="Enter Project Title" name="title" />
+    <b>Client Name:</b>
+    <input type="text" placeholder="Enter Client's Name" name="client" />
+    <b>Budgeted Cost:</b>
+    <input type="number" placeholder="Initial Project Cost" name="init_cost" />
+    <b>Actual Cost:</b>
+    <input type="number" placeholder="Final Project Cost" name="final_cost" />
+    <b>Start Date:</b>
+    <input type="date" placeholder="Final Project Cost" name="start_date" />
+    <b>Date of Completion:</b>
+    <input type="date" placeholder="Final Project Cost" name="finish_date" />
+    <div class="button-spacing">
+      <button type="submit" class="positive ui button fluid ui button">
+        UPDATE
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include ('partials/footer') %>

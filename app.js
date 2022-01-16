@@ -18,7 +18,7 @@ var projectSchema = new mongoose.Schema({
   init_cost: Number,
   final_cost: Number,
   start_date: Date,
-  finish_date: Date
+  finish_date: Date,
 });
 
 var Project = new mongoose.model("Project", projectSchema);
@@ -60,7 +60,6 @@ app.get("/projects", (req, res) => {
   // res.render("projects", { projects: projects });
 });
 
-
 app.get("/addproject", (req, res) => {
   res.render("add-project");
 });
@@ -71,14 +70,20 @@ app.get("/project/:id", (req, res) => {
     if (err) {
       res.redirect("/projects");
     } else {
-      res.render("single-project", {single: foundProject});
+      res.render("single-project", { single: foundProject });
     }
   });
 });
 
 // EDIT ROUTE
 app.get("/project/:id/edit", (req, res) => {
-  res.render("edit");
+  Project.findById(req.params.id, (err, foundProject) => {
+    if (err) {
+      res.redirect("/projects");
+    } else {
+      res.render("edit", {project: foundProject});
+    }
+  });
 });
 
 app.post("/addproject", (req, res) => {
@@ -94,7 +99,7 @@ app.post("/addproject", (req, res) => {
     init_cost: init_cost,
     final_cost: final_cost,
     start_date: start_date,
-    finish_date: finish_date
+    finish_date: finish_date,
   };
 
   // Create a new project and save it into the DB

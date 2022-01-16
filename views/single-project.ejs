@@ -6,10 +6,14 @@
  <p><%= single.init_cost.toLocaleString() %></p><hr>
  <p><%= single.final_cost.toLocaleString() %></p><hr>
  <% if ((single.final_cost - single.init_cost) < 0){ %>
-        <p>Cost Overrun</p><hr>
- <% } else { %>
         <p>Profit</p><hr>
+ <% } else { %>
+        <p>Cost Overrun</p><hr>
  <% } %>
+
+ <b><%= single.start_date.toLocaleString() %></b><hr>
+ <b><%= single.finish_date.toLocaleString() %></b><hr>
+ <b><%= single.finish_date.toLocaleString() -  single.start_date.toLocaleString() %></b><hr>
 </div>
 
 <%- include ('partials/footer') %>
