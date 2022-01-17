@@ -1,20 +1,39 @@
 <%- include ('partials/header') %>
 
 <div class="ui main text container segment">
- <h1><%= single.title %></h1><hr>
- <p><%= single.client %></p><hr>
- <p><%= single.init_cost.toLocaleString() %></p><hr>
- <p><%= single.final_cost.toLocaleString() %></p><hr>
- <% if ((single.init_cost - single.final_cost) < 0){ %>
-        <p>Cost Overrun</p><hr>
- <% } else { %>
-        <p>Profit</p><hr>
- <% } %>
-
- <% var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; %>
-
- <b><%= single.start_date.toLocaleString('en-GB', options) %></b><hr>
- <b><%= single.finish_date.toLocaleString('en-GB', options) %></b><hr>
+  <h1><%= single.title %></h1>
+  <div class="ui divided selection list">
+    <a class="item">
+      <div class="ui purple horizontal label">Client</div>
+      <%= single.client %>
+    </a>
+    <a class="item">
+       <div class="ui purple horizontal label">Budgeted Cost</div>
+       <%= single.init_cost.toLocaleString() %>
+     </a>
+     <a class="item">
+       <div class="ui purple horizontal label">Actual Cost</div>
+       <%= single.final_cost.toLocaleString() %>
+     </a>
+     <a class="item">
+       <div class="ui purple horizontal label">Project Status</div>
+       <% if ((single.init_cost - single.final_cost) < 0){ %>
+              Cost Overrun
+              <% } else { %>
+              Profit
+              <% } %> 
+     </a>
+     <a class="item">
+       <div class="ui purple horizontal label">Start Date</div>
+       <% var options = { weekday: 'long', year: 'numeric', month: 'long',
+       day: 'numeric' }; %>
+       <%= single.start_date.toLocaleString('en-GB', options) %>
+     </a>
+     <a class="item">
+       <div class="ui purple horizontal label">Completion Date</div>
+       <%= single.finish_date.toLocaleString('en-GB', options) %>
+     </a>
+  </div>
 </div>
 
 <%- include ('partials/footer') %>
