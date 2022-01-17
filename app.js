@@ -1,6 +1,8 @@
 const express = require("express");
 const bp = require("body-parser");
 const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const date = require("date-and-time");
 const app = express();
 const port = 3000;
 
@@ -10,6 +12,7 @@ mongoose.connect("mongodb://localhost/projects");
 app.use(express.static("public"));
 app.use(bp.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
 
 // Setting up project schema
 var projectSchema = new mongoose.Schema({
@@ -18,7 +21,7 @@ var projectSchema = new mongoose.Schema({
   init_cost: Number,
   final_cost: Number,
   start_date: Date,
-  finish_date: Date,
+  finish_date: Date
 });
 
 var Project = new mongoose.model("Project", projectSchema);
@@ -81,15 +84,25 @@ app.get("/project/:id/edit", (req, res) => {
     if (err) {
       res.redirect("/projects");
     } else {
-      res.render("edit", {project: foundProject});
+      res.render("edit", { project: foundProject });
     }
   });
 });
 
 // UPDATE ROUTE
 app.put("/project/:id", (req, res) => {
-  
-})
+  Project.findByIdAndUpdate(req.params.id, req.body.project, (err, updatedProject) => {
+    if (err) {
+      console.log(err);
+      res.redirect("/projects");
+    } else {
+      // res.send("Success");
+      res.redirect("/project/" + req.params.id);
+    }
+  });
+});
+
+
 
 app.post("/addproject", (req, res) => {
   var title = req.body.title;

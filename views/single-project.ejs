@@ -5,15 +5,16 @@
  <p><%= single.client %></p><hr>
  <p><%= single.init_cost.toLocaleString() %></p><hr>
  <p><%= single.final_cost.toLocaleString() %></p><hr>
- <% if ((single.final_cost - single.init_cost) < 0){ %>
-        <p>Profit</p><hr>
- <% } else { %>
+ <% if ((single.init_cost - single.final_cost) < 0){ %>
         <p>Cost Overrun</p><hr>
+ <% } else { %>
+        <p>Profit</p><hr>
  <% } %>
 
- <b><%= single.start_date.toLocaleString() %></b><hr>
- <b><%= single.finish_date.toLocaleString() %></b><hr>
- <b><%= single.finish_date.toLocaleString() -  single.start_date.toLocaleString() %></b><hr>
+ <% var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; %>
+
+ <b><%= single.start_date.toLocaleString('en-GB', options) %></b><hr>
+ <b><%= single.finish_date.toLocaleString('en-GB', options) %></b><hr>
 </div>
 
 <%- include ('partials/footer') %>

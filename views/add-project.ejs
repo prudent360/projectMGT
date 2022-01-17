@@ -3,17 +3,17 @@
 <div class="ui main text container segment">
   <form class="ui form" action="/addproject" method="post">
     <b>Project Title:</b>
-    <input type="text" placeholder="Enter Project Title" name="title" />
+    <input type="text" placeholder="Enter Project Title" name="title" required/>
     <b>Client Name:</b>
-    <input type="text" placeholder="Enter Client's Name" name="client" />
+    <input type="text" placeholder="Enter Client's Name" name="client" required/>
     <b>Budgeted Cost:</b>
-    <input type="number" placeholder="Initial Project Cost" name="init_cost" />
+    <input type="number" placeholder="Initial Project Cost" name="init_cost" required/>
     <b>Actual Cost:</b>
-    <input type="number" placeholder="Final Project Cost" name="final_cost" />
+    <input type="number" placeholder="Final Project Cost" name="final_cost" required/>
     <b>Start Date:</b>
-    <input type="date" placeholder="Final Project Cost" name="start_date" />
+    <input type="date" placeholder="Final Project Cost" name="start_date" required/>
     <b>Date of Completion:</b>
-    <input type="date" placeholder="Final Project Cost" name="finish_date" />
+    <input type="date" placeholder="Final Project Cost" name="finish_date" required/>
     <div class="button-spacing">
       <button type="submit" class="positive ui button fluid ui button">
         SUBMIT
